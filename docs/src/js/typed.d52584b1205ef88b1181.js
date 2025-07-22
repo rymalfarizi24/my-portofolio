@@ -16,7 +16,7 @@
   \*************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\nnew Typed('#typed', {\r\n  strings: ['Backend Web Developer', 'Frontend Web Developer', 'Fullstack Web Developer', 'Software Engineer'],\r\n  typeSpeed: 50,\r\n  backSpeed: 25,\r\n});\n\n//# sourceURL=webpack://my-portofolio/./src/js/typed.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nnew Typed('#typed', {\r\n  strings: ['Tech Enthusiast', 'Fullstack Developer', 'Software Engineer'],\r\n  typeSpeed: 50,\r\n  backSpeed: 25,\r\n});\n\n//# sourceURL=webpack://my-portofolio/./src/js/typed.js?");
 
 /***/ })
 

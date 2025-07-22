@@ -69,7 +69,7 @@ section#portfolio {
 }
 
 .typed-cursor {
-    @apply text-primary;
+    @apply text-primary text-lg lg:text-2xl;
 }
 
 @media screen and (max-width: 768px) {

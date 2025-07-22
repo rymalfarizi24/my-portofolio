@@ -1,5 +1,5 @@
 new Typed('#typed', {
-  strings: ['Backend Web Developer', 'Frontend Web Developer', 'Fullstack Web Developer', 'Software Engineer'],
+  strings: ['Tech Enthusiast', 'Fullstack Developer', 'Software Engineer'],
   typeSpeed: 50,
   backSpeed: 25,
 });
