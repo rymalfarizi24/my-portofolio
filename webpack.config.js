@@ -13,7 +13,8 @@ export default {
   mode: 'development',
   entry: {
     script: './src/js/script.js',
-    indexScript: './src/js/indexScript.js'
+    indexScript: './src/js/indexScript.js',
+    swiper: './src/js/swiper.js',
   },
   output: {
     path: path.resolve(__dirname, 'docs'),
@@ -21,19 +22,10 @@ export default {
     assetModuleFilename: '[path]/[name]-[hash][ext]',
     clean: true
   },
-  //  optimization: {
-  //       minimizer: [
-  //           new ImageMinimizerPlugin({
-  //               minimizer: {
-  //                   implementation: ImageMinimizerPlugin.sharpMinify
-  //               },
-  //           }),
-  //       ],
-  //   },
   plugins: [new HtmlWebpackPlugin({
     filename: 'index.html',
     template: './src/index.html',
-    chunks: ['script', 'indexScript']
+    chunks: ['script', 'indexScript', 'swiper']
   }),
   new HtmlWebpackPlugin({
     filename: 'about.html',

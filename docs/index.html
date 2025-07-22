@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portofolio</title>
+
+    <!-- Link Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Link Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="src/assets//Portfolio-Icon-34463f8e0ce4c715aebe.png">
     <script>
@@ -14,7 +18,7 @@
             document.documentElement.classList.toggle("dark");
         }
     </script>
-<script defer src="src/js/script.480be13b62dfc3162744.js"></script><script defer src="src/js/indexScript.cb14f7db7a18cd0776e2.js"></script><link href="src/css/style.2bf7ded18478c2b93d76.css" rel="stylesheet"></head>
+<script defer src="src/js/script.480be13b62dfc3162744.js"></script><script defer src="src/js/indexScript.cb14f7db7a18cd0776e2.js"></script><script defer src="src/js/swiper.932d544b6c4923b46506.js"></script><link href="src/css/style.7aa0c59ca6e031d06b77.css" rel="stylesheet"></head>
 
 <body>
     <!-- Header Start -->
@@ -123,7 +127,7 @@
                 <div class="w-full px-4 mb-8 lg:w-1/2">
                     <h2 class="font-bold text-black text-3xl mb-4 max-w-xl lg:text-4xl lg:mb-5 dark:text-white">Yuk,
                         kenalan sama aku</h2>
-                    <p class="font-medium text-secondary dark:text-slate-400 max-w-xl lg:text-lg mb-5">
+                    <p class="font-medium text-secondary dark:text-slate-400 mb-5 max-w-xl lg:text-lg mb-5">
                         Saya adalah seorang pengembang aplikasi berbasis web yang siap membantu mewujudkan ide-ide Anda
                         menjadi kenyataan!
                     </p>
@@ -134,7 +138,8 @@
                 <div class="w-full px-4 lg:w-1/2">
                     <h3 class="font-semibold text-dark text-2xl mb-3 lg:text-3xl dark:text-white">Mari berteman
                     </h3>
-                    <p class="font-medium text-secondary dark:text-slate-400 mb-4 lg:text-lg max-w-xl">Saya senang berkolaborasi dengan
+                    <p class="font-medium text-secondary dark:text-slate-400 mb-5 mb-4 lg:text-lg max-w-xl">Saya senang
+                        berkolaborasi dengan
                         orang-orang hebat untuk menciptakan sesuatu yang luar biasa.</p>
                     <div class="flex">
                         <!-- Youtube -->
@@ -171,7 +176,7 @@
                         </a>
                         <!-- Github -->
                         <a href="https://github.com/Letsgobois24" target="_blank"
-                            class="w-9 h-9 border border-slate-300 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
+                            class="w-9 h-9 border border-slate-400 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
                             <svg role="img" class="w-5 fill-current" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <title>GitHub</title>
@@ -188,180 +193,216 @@
     <!-- About Section End -->
 
     <!-- Portofolio Section Start -->
-    <section id="portfolio" class="pt-36 pb-32 bg-slate-200 dark:bg-dark">
+    <section id="portfolio" class="pt-36 pb-16 bg-slate-200 dark:bg-dark">
         <div class="w-full px-4">
             <div class="text-center max-w-xl mx-auto mb-12">
                 <h4 class="text-primary font-semibold mb-2 xl:text-lg">Portfolio</h4>
                 <h2 class="text-3xl font-extrabold mb-3 text-dark lg:text-5xl dark:text-white">Proyek Terbaru</h2>
-                <p class="inline-block max-w-xl font-base text-secondary dark:text-slate-400 lg:text-md">Saya selalu memberikan solusi
+                <p class="inline-block max-w-xl font-base text-secondary dark:text-slate-400 lg:text-md">Saya selalu
+                    memberikan solusi
                     terbaik untuk setiap tantangan yang ada.
                     <br>Berikut adalah beberapa proyek terbaru yang telah saya kerjakan.
                 </p>
             </div>
 
-            <div class="w-full px-4 flex flex-wrap justify-center text-center">
-                <div class="py-4 sm:p-6 md:w-1/2 lg:w-1/3">
-                    <div class="rounded-md shadow-md overflow-hidden">
-                        <img src="src/assets//Buku-Tamu-Desnet-b4d1d5581ece020f3e43.png" alt="Manajemen Buku Tamu Desnet" width="w-full">
-                    </div>
+            <div class="swiper">
+                <div class="card-wrapper pb-16 px-12">
+                    <ul class="swiper-wrapper">
+                        <!-- Si Jempang -  -->
+                        <li class="swiper-slide item-lists">
+                            <div class="rounded-md shadow-md overflow-hidden">
+                                <img src="src/assets//si-jempang-a95a50ed8841436436a4.png" alt="Si Jempang"
+                                >
+                            </div>
+                            <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white hover:scale-105">
+                                <a>Sistem Jentik Pantau Kampung</a>
+                            </h3>
+                            <p class="font-medium text-secondary dark:text-slate-400 mb-5">Sistem Jentik Pantau Kampung (SI JEMPANG) merupakan aplikasi pelaporan dan pemantauan potensi perkembangan jentik nyamuk</p>
+                            <div class="mt-2 flex gap-3 justify-center">
+                                <a href="https://codeigniter.com" target="_blank"
+                                    class="w-9 h-9 border border-slate-400 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
+                                    <svg role="img" class="w-5 fill-current" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <title>CodeIgniter</title>
+                                        <path
+                                            d="M11.466 0c.88 1.423-.28 3.306-1.207 4.358-.899 1.02-1.992 1.873-2.985 2.8-1.066.996-2.091 2.044-2.967 3.213-1.753 2.339-2.827 5.28-2.038 8.199.788 2.916 3.314 4.772 6.167 5.429-1.44-.622-2.786-2.203-2.79-3.82-.003-1.765 1.115-3.262 2.505-4.246-.167.632-.258 1.21.155 1.774a1.68 1.68 0 0 0 1.696.642c1.487-.326 1.556-1.96.674-2.914-.872-.943-1.715-2.009-1.384-3.377.167-.685.588-1.328 1.121-1.787-.41 1.078.755 2.14 1.523 2.67 1.332.918 2.793 1.612 4.017 2.688 1.288 1.132 2.24 2.661 2.047 4.435-.208 1.923-1.736 3.26-3.45 3.936 3.622-.8 7.365-3.61 7.44-7.627.093-3.032-1.903-5.717-5.158-7.384.19.48.074.697-.058.924-.55.944-2.082 1.152-2.835.184-1.205-1.548.025-3.216.197-4.855.215-2.055-1.073-4.049-2.67-5.242z" />
+                                    </svg>
+                                </a>
+                                <a href="https://leafletjs.com/" target="_blank"
+                                    class="w-9 h-9 border border-slate-400 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
+                                    <svg class="w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 512"><path fill="currentColor" d="M156.483 498.57c-28.154 26.468-77.292 11.408-108.562-24.176C6.4 427.148-8.631 337.668 4.754 257.873zm32.732-30.512c-18.228-7.747-91.458-45.553-62.463-179.76C80.302 257.764 13.644 234.8 9.378 229.82c0 0 .174 8.073-1.962 23.902l157.637 235.35c3.916-7.718 14.3-13.878 24.162-21.014m-49.786-79.579c15.543 51.182 43.043 57.232 63.315 69.89L408.585 17.992h2.435L219.913 472.995c19.381 18.274 45.235 36.647 84.038 27.902C463.908 472.324 500.428 214.25 413.902 0C312.147 69.794 235.998 107.428 186.32 181.314c-38.638 57.467-68.612 138.396-46.891 207.165"/></svg>
+                                </a>
+                                <a href="https://supabase.com/" target="_blank"
+                                    class="w-9 h-9 border border-slate-400 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
+                                    <svg class="w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M3.084 15.25c-1.664 0-2.6-1.912-1.58-3.226L10.21.806C10.794.054 12 .466 12 1.42v7.33h8.916c1.663 0 2.6 1.912 1.58 3.226L13.79 23.194c-.584.752-1.79.34-1.79-.613V15.25z"/></svg>
+                                </a>
+                                <a href="https://tailwindcss.com" target="_blank"
+                                    class="w-9 h-9 border border-slate-400 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
+                                    <svg role="img" class="w-5 fill-current" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <title>Tailwind CSS</title>
+                                        <path
+                                            d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+                        <!-- Si Panda -->
+                        <li class="swiper-slide item-lists">
+                            <div class="rounded-md shadow-md overflow-hidden">
+                                <img src="src/assets//si-panda-5f5227c9d39df4b4ba11.png" alt="Si Panda">
+                            </div>
+                            <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white hover:scale-105">
+                                <a>Sistem Pantau Data Anak</a>
+                            </h3>
+                            <p class="font-medium text-secondary dark:text-slate-400 mb-5">Sistem Pantau Data Anak (SI PANDA) merupakan aplikasi berbasis web pencatatan dan pemantauan data balita</p>
+                            <div class="mt-2 flex gap-3 justify-center">
+                                <a href="https://codeigniter.com" target="_blank"
+                                    class="w-9 h-9 border border-slate-400 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
+                                    <svg role="img" class="w-5 fill-current" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <title>CodeIgniter</title>
+                                        <path
+                                            d="M11.466 0c.88 1.423-.28 3.306-1.207 4.358-.899 1.02-1.992 1.873-2.985 2.8-1.066.996-2.091 2.044-2.967 3.213-1.753 2.339-2.827 5.28-2.038 8.199.788 2.916 3.314 4.772 6.167 5.429-1.44-.622-2.786-2.203-2.79-3.82-.003-1.765 1.115-3.262 2.505-4.246-.167.632-.258 1.21.155 1.774a1.68 1.68 0 0 0 1.696.642c1.487-.326 1.556-1.96.674-2.914-.872-.943-1.715-2.009-1.384-3.377.167-.685.588-1.328 1.121-1.787-.41 1.078.755 2.14 1.523 2.67 1.332.918 2.793 1.612 4.017 2.688 1.288 1.132 2.24 2.661 2.047 4.435-.208 1.923-1.736 3.26-3.45 3.936 3.622-.8 7.365-3.61 7.44-7.627.093-3.032-1.903-5.717-5.158-7.384.19.48.074.697-.058.924-.55.944-2.082 1.152-2.835.184-1.205-1.548.025-3.216.197-4.855.215-2.055-1.073-4.049-2.67-5.242z" />
+                                    </svg>
+                                </a>
+                                <a href="https://supabase.com/" target="_blank"
+                                    class="w-9 h-9 border border-slate-400 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
+                                    <svg class="w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M3.084 15.25c-1.664 0-2.6-1.912-1.58-3.226L10.21.806C10.794.054 12 .466 12 1.42v7.33h8.916c1.663 0 2.6 1.912 1.58 3.226L13.79 23.194c-.584.752-1.79.34-1.79-.613V15.25z"/></svg>
+                                </a>
+                                <a href="https://tailwindcss.com" target="_blank"
+                                    class="w-9 h-9 border border-slate-400 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
+                                    <svg role="img" class="w-5 fill-current" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <title>Tailwind CSS</title>
+                                        <path
+                                            d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="swiper-slide item-lists">
+                            <div class="rounded-md shadow-md overflow-hidden">
+                                <img src="src/assets//Buku-Tamu-Desnet-b4d1d5581ece020f3e43.png" alt="Manajemen Buku Tamu Desnet" class="w-full">
+                            </div>
 
-                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white hover:scale-105">
-                        <a>
-                            Manajemen Buku Tamu Desnet</a>
-                    </h3>
-                    <p class="font-medium text-secondary dark:text-slate-400">Aplikasi ini dikembangkan untuk menjadwalkan dan memanajemen
-                        tamu secara efisien dan terorganisir di PT DES Teknologi Informasi.</p>
-                    <div class="mt-2 flex gap-3 justify-center">
-                        <a href="https://codeigniter.com" target="_blank"
-                            class="w-9 h-9 border border-slate-300 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
-                            <svg role="img" class="w-5 fill-current" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <title>CodeIgniter</title>
-                                <path
-                                    d="M11.466 0c.88 1.423-.28 3.306-1.207 4.358-.899 1.02-1.992 1.873-2.985 2.8-1.066.996-2.091 2.044-2.967 3.213-1.753 2.339-2.827 5.28-2.038 8.199.788 2.916 3.314 4.772 6.167 5.429-1.44-.622-2.786-2.203-2.79-3.82-.003-1.765 1.115-3.262 2.505-4.246-.167.632-.258 1.21.155 1.774a1.68 1.68 0 0 0 1.696.642c1.487-.326 1.556-1.96.674-2.914-.872-.943-1.715-2.009-1.384-3.377.167-.685.588-1.328 1.121-1.787-.41 1.078.755 2.14 1.523 2.67 1.332.918 2.793 1.612 4.017 2.688 1.288 1.132 2.24 2.661 2.047 4.435-.208 1.923-1.736 3.26-3.45 3.936 3.622-.8 7.365-3.61 7.44-7.627.093-3.032-1.903-5.717-5.158-7.384.19.48.074.697-.058.924-.55.944-2.082 1.152-2.835.184-1.205-1.548.025-3.216.197-4.855.215-2.055-1.073-4.049-2.67-5.242z" />
-                            </svg>
-                        </a>
-                        <a href="https://tailwindcss.com" target="_blank"
-                            class="w-9 h-9 border border-slate-300 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
-                            <svg role="img" class="w-5 fill-current" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <title>Tailwind CSS</title>
-                                <path
-                                    d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="py-4 sm:p-6 md:w-1/2 lg:w-1/3">
-                    <div class="rounded-md shadow-md overflow-hidden">
-                        <img src="src/assets//Form-Buku-Tamu-7a4496c2f36a33735736.png" alt="Formulir Buku Tamu Desnet" width="w-full">
-                    </div>
-                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white hover:scale-105">
-                        <a>Formulir Buku Tamu
-                            Desnet</a>
-                    </h3>
-                    <p class="font-medium text-secondary dark:text-slate-400">Pengisian buku tamu pada formulir untuk tamu dengan aplikasi
-                        berbasis web di PT DES Teknologi Informasi</p>
-                    <div class="mt-2 flex gap-3 justify-center">
-                        <a href="https://codeigniter.com" target="_blank"
-                            class="w-9 h-9 border border-slate-300 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
-                            <svg role="img" class="w-5 fill-current" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <title>CodeIgniter</title>
-                                <path
-                                    d="M11.466 0c.88 1.423-.28 3.306-1.207 4.358-.899 1.02-1.992 1.873-2.985 2.8-1.066.996-2.091 2.044-2.967 3.213-1.753 2.339-2.827 5.28-2.038 8.199.788 2.916 3.314 4.772 6.167 5.429-1.44-.622-2.786-2.203-2.79-3.82-.003-1.765 1.115-3.262 2.505-4.246-.167.632-.258 1.21.155 1.774a1.68 1.68 0 0 0 1.696.642c1.487-.326 1.556-1.96.674-2.914-.872-.943-1.715-2.009-1.384-3.377.167-.685.588-1.328 1.121-1.787-.41 1.078.755 2.14 1.523 2.67 1.332.918 2.793 1.612 4.017 2.688 1.288 1.132 2.24 2.661 2.047 4.435-.208 1.923-1.736 3.26-3.45 3.936 3.622-.8 7.365-3.61 7.44-7.627.093-3.032-1.903-5.717-5.158-7.384.19.48.074.697-.058.924-.55.944-2.082 1.152-2.835.184-1.205-1.548.025-3.216.197-4.855.215-2.055-1.073-4.049-2.67-5.242z" />
-                            </svg>
-                        </a>
-                        <a href="https://react.dev" target="_blank"
-                            class="w-9 h-9 border border-slate-300 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
-                            <svg role="img" class="w-5 fill-current" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <title>React</title>
-                                <path
-                                    d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z" />
-                            </svg>
-                        </a>
-                        <a href="https://tailwindcss.com" target="_blank"
-                            class="w-9 h-9 border border-slate-300 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
-                            <svg role="img" class="w-5 fill-current" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <title>Tailwind CSS</title>
-                                <path
-                                    d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="py-4 sm:p-6 md:w-1/2 lg:w-1/3">
-                    <div class="rounded-md shadow-md overflow-hidden">
-                        <img src="src/assets//Management-Project-36ebf8bb807e93bd9453.png" alt="Manajemen Pengguna" width="w-full">
-                    </div>
-                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white hover:scale-105">
-                        <a href="https://github.com/Letsgobois24/auth-website" target="_blank">Manajemen Pengguna</a>
-                    </h3>
-                    <p class="font-medium text-secondary dark:text-slate-400">Projek aplikasi berbasis web guna memanajemen peran, menu, dan
-                        pengguna.</p>
-                    <div class="mt-2 flex gap-3 justify-center">
-                        <a href="https://codeigniter.com" target="_blank"
-                            class="w-9 h-9 border border-slate-300 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
-                            <svg role="img" class="w-5 fill-current" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <title>CodeIgniter</title>
-                                <path
-                                    d="M11.466 0c.88 1.423-.28 3.306-1.207 4.358-.899 1.02-1.992 1.873-2.985 2.8-1.066.996-2.091 2.044-2.967 3.213-1.753 2.339-2.827 5.28-2.038 8.199.788 2.916 3.314 4.772 6.167 5.429-1.44-.622-2.786-2.203-2.79-3.82-.003-1.765 1.115-3.262 2.505-4.246-.167.632-.258 1.21.155 1.774a1.68 1.68 0 0 0 1.696.642c1.487-.326 1.556-1.96.674-2.914-.872-.943-1.715-2.009-1.384-3.377.167-.685.588-1.328 1.121-1.787-.41 1.078.755 2.14 1.523 2.67 1.332.918 2.793 1.612 4.017 2.688 1.288 1.132 2.24 2.661 2.047 4.435-.208 1.923-1.736 3.26-3.45 3.936 3.622-.8 7.365-3.61 7.44-7.627.093-3.032-1.903-5.717-5.158-7.384.19.48.074.697-.058.924-.55.944-2.082 1.152-2.835.184-1.205-1.548.025-3.216.197-4.855.215-2.055-1.073-4.049-2.67-5.242z" />
-                            </svg>
-                        </a>
-                        <a href="https://getbootstrap.com" target="_blank"
-                            class="w-9 h-9 border border-slate-300 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
-                            <svg role="img" class="w-5 fill-current" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <title>Bootstrap</title>
-                                <path
-                                    d="M11.77 11.24H9.956V8.202h2.152c1.17 0 1.834.522 1.834 1.466 0 1.008-.773 1.572-2.174 1.572zm.324 1.206H9.957v3.348h2.231c1.459 0 2.232-.585 2.232-1.685s-.795-1.663-2.326-1.663zM24 11.39v1.218c-1.128.108-1.817.944-2.226 2.268-.407 1.319-.463 2.937-.42 4.186.045 1.3-.968 2.5-2.337 2.5H4.985c-1.37 0-2.383-1.2-2.337-2.5.043-1.249-.013-2.867-.42-4.186-.41-1.324-1.1-2.16-2.228-2.268V11.39c1.128-.108 1.819-.944 2.227-2.268.408-1.319.464-2.937.42-4.186-.045-1.3.968-2.5 2.338-2.5h14.032c1.37 0 2.382 1.2 2.337 2.5-.043 1.249.013 2.867.42 4.186.409 1.324 1.098 2.16 2.226 2.268zm-7.927 2.817c0-1.354-.953-2.333-2.368-2.488v-.057c1.04-.169 1.856-1.135 1.856-2.213 0-1.537-1.213-2.538-3.062-2.538h-4.16v10.172h4.181c2.218 0 3.553-1.086 3.553-2.876z" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="py-4 sm:p-6 md:w-1/2 lg:w-1/3">
-                    <div class="rounded-md shadow-md overflow-hidden">
-                        <img src="src/assets//bike-sharing-report-c662b5dcddf460b2b432.png" alt="Laporan Penggunaan Sepeda" width="w-full">
-                    </div>
-                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white hover:scale-105">
-                        <a href="https://github.com/rymalfarizi/bike-sharing" target="_blank">Laporan Penggunaan
-                            Sepeda</a>
-                    </h3>
-                    <p class="font-medium text-secondary dark:text-slate-400">Laporan hasil analisis penggunaan sepeda yang ditampilkan pada
-                        website</p>
-                    <div class="mt-2 flex gap-3 justify-center">
-                        <a href="https://www.python.org/" target="_blank"
-                            class="w-9 h-9 border border-slate-300 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
-                            <svg role="img" class="w-5 fill-current" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <title>Python</title>
-                                <path
-                                    d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z" />
-                            </svg>
-                        </a>
-                        <a href="https://pandas.pydata.org/" target="_blank"
-                            class="w-9 h-9 border border-slate-300 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
-                            <svg role="img" class="w-5 fill-current" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <title>pandas</title>
-                                <path
-                                    d="M16.922 0h2.623v18.104h-2.623zm-4.126 12.94h2.623v2.57h-2.623zm0-7.037h2.623v5.446h-2.623zm0 11.197h2.623v5.446h-2.623zM4.456 5.896h2.622V24H4.455zm4.213 2.559h2.623v2.57H8.67zm0 4.151h2.623v5.447H8.67zm0-11.187h2.623v5.446H8.67Z" />
-                            </svg></a>
-                        <a href="https://streamlit.io/" target="_blank"
-                            class="w-9 h-9 border border-slate-300 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
-                            <svg role="img" class="w-5 fill-current" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <title>Streamlit</title>
-                                <path
-                                    d="M16.673 11.32l6.862-3.618c.233-.136.554.12.442.387L20.463 17.1zm-8.556-.229l3.473-5.187c.203-.328.578-.316.793-.028l7.886 11.75zm-3.375 7.25c-.28 0-.835-.284-.993-.716l-3.72-9.46c-.118-.331.139-.614.48-.464l19.474 10.306c-.149.147-.453.337-.72.334z" />
-                            </svg></a>
-                    </div>
-                </div>
-                <div class="py-4 sm:p-6 md:w-1/2 lg:w-1/3">
-                    <div class="rounded-md shadow-md overflow-hidden">
-                        <img src="src/assets//To-Do-List-1350ed035e17b7c8e16e.png" alt="To Do List" width="w-full">
-                    </div>
-                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white hover:scale-105">
-                        <a href="https://github.com/Letsgobois24/react-todo-list" target="_blank">To Do List</a>
-                    </h3>
-                    <p class="font-medium text-secondary dark:text-slate-400">Aplikasi frontend yang digunakan untuk mengelola daftar hal
-                        yang harus dikerjakan</p>
-                    <div class="mt-2 flex gap-3 justify-center">
-                        <a href="https://react.dev" target="_blank"
-                            class="w-9 h-9 border border-slate-300 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
-                            <svg role="img" class="w-5 fill-current" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <title>React</title>
-                                <path
-                                    d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z" />
-                            </svg>
-                        </a>
-                    </div>
+                            <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white hover:scale-105">
+                                <a>
+                                    Manajemen Buku Tamu Desnet</a>
+                            </h3>
+                            <p class="font-medium text-secondary dark:text-slate-400 mb-5">Aplikasi ini dikembangkan untuk
+                                menjadwalkan dan memanajemen
+                                tamu secara efisien dan terorganisir di PT DES Teknologi Informasi.</p>
+                            <div class="mt-2 flex gap-3 justify-center">
+                                <a href="https://codeigniter.com" target="_blank"
+                                    class="w-9 h-9 border border-slate-400 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
+                                    <svg role="img" class="w-5 fill-current" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <title>CodeIgniter</title>
+                                        <path
+                                            d="M11.466 0c.88 1.423-.28 3.306-1.207 4.358-.899 1.02-1.992 1.873-2.985 2.8-1.066.996-2.091 2.044-2.967 3.213-1.753 2.339-2.827 5.28-2.038 8.199.788 2.916 3.314 4.772 6.167 5.429-1.44-.622-2.786-2.203-2.79-3.82-.003-1.765 1.115-3.262 2.505-4.246-.167.632-.258 1.21.155 1.774a1.68 1.68 0 0 0 1.696.642c1.487-.326 1.556-1.96.674-2.914-.872-.943-1.715-2.009-1.384-3.377.167-.685.588-1.328 1.121-1.787-.41 1.078.755 2.14 1.523 2.67 1.332.918 2.793 1.612 4.017 2.688 1.288 1.132 2.24 2.661 2.047 4.435-.208 1.923-1.736 3.26-3.45 3.936 3.622-.8 7.365-3.61 7.44-7.627.093-3.032-1.903-5.717-5.158-7.384.19.48.074.697-.058.924-.55.944-2.082 1.152-2.835.184-1.205-1.548.025-3.216.197-4.855.215-2.055-1.073-4.049-2.67-5.242z" />
+                                    </svg>
+                                </a>
+                                <a href="https://www.mysql.com/" target="_blank"
+                                    class="w-9 h-9 border border-slate-400 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
+                                    <svg class="w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M20.422 17.337c-1.088-.03-1.932.081-2.64.379c-.203.082-.53.082-.557.338c.11.108.122.284.218.433c.163.27.449.635.707.824l.87.622c.531.325 1.13.514 1.647.838c.299.19.598.433.898.636c.152.108.244.284.435.352v-.041c-.095-.122-.123-.297-.217-.433l-.409-.392a6.4 6.4 0 0 0-1.415-1.365c-.435-.298-1.387-.703-1.564-1.203l-.027-.03c.299-.03.653-.136.939-.217c.463-.121.884-.095 1.36-.216l.653-.19v-.12c-.245-.244-.422-.569-.68-.798a18 18 0 0 0-2.245-1.663c-.422-.27-.966-.447-1.415-.676c-.164-.081-.435-.122-.53-.257c-.246-.297-.381-.69-.558-1.041l-1.116-2.353c-.245-.527-.395-1.054-.694-1.54c-1.4-2.3-2.925-3.692-5.265-5.058c-.503-.284-1.101-.406-1.738-.554l-1.02-.055c-.218-.094-.436-.351-.626-.473c-.775-.487-2.775-1.541-3.347-.151c-.368.878.544 1.743.854 2.19c.231.31.53.662.694 1.014c.091.23.122.473.217.716c.218.595.422 1.258.708 1.812c.152.284.312.582.503.839c.109.151.3.216.34.46c-.19.27-.204.675-.313 1.014c-.49 1.528-.3 3.42.395 4.545c.218.338.731 1.082 1.428.798c.613-.244.476-1.014.653-1.69c.041-.162.014-.27.095-.379v.03l.558 1.123c.422.662 1.157 1.352 1.769 1.812c.326.243.584.662.992.81v-.04h-.026c-.082-.121-.205-.176-.314-.27a6.6 6.6 0 0 1-.707-.812a17.4 17.4 0 0 1-1.523-2.46c-.218-.42-.409-.879-.585-1.298c-.083-.162-.083-.406-.218-.487c-.205.297-.503.555-.654.92c-.258.58-.285 1.297-.38 2.041c-.055.014-.03 0-.055.03c-.435-.107-.585-.554-.748-.932c-.408-.96-.476-2.501-.123-3.61c.096-.284.504-1.177.341-1.447c-.082-.257-.354-.405-.504-.608a5.5 5.5 0 0 1-.49-.865c-.325-.758-.489-1.596-.843-2.353c-.163-.352-.449-.717-.68-1.041c-.259-.365-.544-.622-.748-1.055c-.068-.151-.163-.392-.054-.554c.026-.108.081-.152.19-.176c.176-.151.68.04.857.121c.503.203.925.392 1.347.676c.19.135.394.392.64.46h.285c.436.095.925.03 1.333.152c.72.23 1.374.567 1.96.933a12 12 0 0 1 4.244 4.624c.163.311.23.595.38.92c.287.662.64 1.338.926 1.987c.286.636.558 1.285.966 1.812c.204.284 1.02.433 1.387.582c.272.12.694.23.94.378c.461.284.924.609 1.359.92c.217.162.898.5.939.77zM6.548 5.588a2.2 2.2 0 0 0-.557.068v.03h.027c.109.216.3.365.435.555l.313.649l.027-.03c.19-.136.286-.352.286-.676c-.082-.095-.095-.19-.163-.284c-.082-.135-.259-.203-.368-.311" clip-rule="evenodd"/></svg>
+                                </a>
+                                <a href="https://tailwindcss.com" target="_blank"
+                                    class="w-9 h-9 border border-slate-400 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
+                                    <svg role="img" class="w-5 fill-current" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <title>Tailwind CSS</title>
+                                        <path
+                                            d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="swiper-slide item-lists">
+                            <div class="rounded-md shadow-md overflow-hidden">
+                                <img src="src/assets//Form-Buku-Tamu-7a4496c2f36a33735736.png" alt="Formulir Buku Tamu Desnet">
+                            </div>
+                            <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white hover:scale-105">
+                                <a>Formulir Buku Tamu
+                                    Desnet</a>
+                            </h3>
+                            <p class="font-medium text-secondary dark:text-slate-400 mb-5">Pengisian buku tamu pada formulir
+                                untuk tamu dengan aplikasi
+                                berbasis web di PT DES Teknologi Informasi</p>
+                            <div class="mt-2 flex gap-3 justify-center">
+                                <a href="https://codeigniter.com" target="_blank"
+                                    class="w-9 h-9 border border-slate-400 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
+                                    <svg role="img" class="w-5 fill-current" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <title>CodeIgniter</title>
+                                        <path
+                                            d="M11.466 0c.88 1.423-.28 3.306-1.207 4.358-.899 1.02-1.992 1.873-2.985 2.8-1.066.996-2.091 2.044-2.967 3.213-1.753 2.339-2.827 5.28-2.038 8.199.788 2.916 3.314 4.772 6.167 5.429-1.44-.622-2.786-2.203-2.79-3.82-.003-1.765 1.115-3.262 2.505-4.246-.167.632-.258 1.21.155 1.774a1.68 1.68 0 0 0 1.696.642c1.487-.326 1.556-1.96.674-2.914-.872-.943-1.715-2.009-1.384-3.377.167-.685.588-1.328 1.121-1.787-.41 1.078.755 2.14 1.523 2.67 1.332.918 2.793 1.612 4.017 2.688 1.288 1.132 2.24 2.661 2.047 4.435-.208 1.923-1.736 3.26-3.45 3.936 3.622-.8 7.365-3.61 7.44-7.627.093-3.032-1.903-5.717-5.158-7.384.19.48.074.697-.058.924-.55.944-2.082 1.152-2.835.184-1.205-1.548.025-3.216.197-4.855.215-2.055-1.073-4.049-2.67-5.242z" />
+                                    </svg>
+                                </a>
+                                <a href="https://react.dev" target="_blank"
+                                    class="w-9 h-9 border border-slate-400 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
+                                    <svg role="img" class="w-5 fill-current" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <title>React</title>
+                                        <path
+                                            d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z" />
+                                    </svg>
+                                </a>
+                                <a href="https://tailwindcss.com" target="_blank"
+                                    class="w-9 h-9 border border-slate-400 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
+                                    <svg role="img" class="w-5 fill-current" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <title>Tailwind CSS</title>
+                                        <path
+                                            d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="swiper-slide item-lists">
+                            <div class="rounded-md shadow-md overflow-hidden">
+                                <img src="src/assets//Management-Project-36ebf8bb807e93bd9453.png" alt="Manajemen Pengguna">
+                            </div>
+                            <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white hover:scale-105">
+                                <a href="https://github.com/Letsgobois24/auth-website" target="_blank">Manajemen
+                                    Pengguna</a>
+                            </h3>
+                            <p class="font-medium text-secondary dark:text-slate-400 mb-5">Projek aplikasi berbasis web guna
+                                ,mengelola dan memanajemen peran, menu, dan pengguna.</p>
+                            <div class="mt-2 flex gap-3 justify-center">
+                                <a href="https://codeigniter.com" target="_blank"
+                                    class="w-9 h-9 border border-slate-400 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
+                                    <svg role="img" class="w-5 fill-current" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <title>CodeIgniter</title>
+                                        <path
+                                            d="M11.466 0c.88 1.423-.28 3.306-1.207 4.358-.899 1.02-1.992 1.873-2.985 2.8-1.066.996-2.091 2.044-2.967 3.213-1.753 2.339-2.827 5.28-2.038 8.199.788 2.916 3.314 4.772 6.167 5.429-1.44-.622-2.786-2.203-2.79-3.82-.003-1.765 1.115-3.262 2.505-4.246-.167.632-.258 1.21.155 1.774a1.68 1.68 0 0 0 1.696.642c1.487-.326 1.556-1.96.674-2.914-.872-.943-1.715-2.009-1.384-3.377.167-.685.588-1.328 1.121-1.787-.41 1.078.755 2.14 1.523 2.67 1.332.918 2.793 1.612 4.017 2.688 1.288 1.132 2.24 2.661 2.047 4.435-.208 1.923-1.736 3.26-3.45 3.936 3.622-.8 7.365-3.61 7.44-7.627.093-3.032-1.903-5.717-5.158-7.384.19.48.074.697-.058.924-.55.944-2.082 1.152-2.835.184-1.205-1.548.025-3.216.197-4.855.215-2.055-1.073-4.049-2.67-5.242z" />
+                                    </svg>
+                                </a>
+                                <a href="https://www.mysql.com/" target="_blank"
+                                    class="w-9 h-9 border border-slate-400 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
+                                    <svg class="w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M20.422 17.337c-1.088-.03-1.932.081-2.64.379c-.203.082-.53.082-.557.338c.11.108.122.284.218.433c.163.27.449.635.707.824l.87.622c.531.325 1.13.514 1.647.838c.299.19.598.433.898.636c.152.108.244.284.435.352v-.041c-.095-.122-.123-.297-.217-.433l-.409-.392a6.4 6.4 0 0 0-1.415-1.365c-.435-.298-1.387-.703-1.564-1.203l-.027-.03c.299-.03.653-.136.939-.217c.463-.121.884-.095 1.36-.216l.653-.19v-.12c-.245-.244-.422-.569-.68-.798a18 18 0 0 0-2.245-1.663c-.422-.27-.966-.447-1.415-.676c-.164-.081-.435-.122-.53-.257c-.246-.297-.381-.69-.558-1.041l-1.116-2.353c-.245-.527-.395-1.054-.694-1.54c-1.4-2.3-2.925-3.692-5.265-5.058c-.503-.284-1.101-.406-1.738-.554l-1.02-.055c-.218-.094-.436-.351-.626-.473c-.775-.487-2.775-1.541-3.347-.151c-.368.878.544 1.743.854 2.19c.231.31.53.662.694 1.014c.091.23.122.473.217.716c.218.595.422 1.258.708 1.812c.152.284.312.582.503.839c.109.151.3.216.34.46c-.19.27-.204.675-.313 1.014c-.49 1.528-.3 3.42.395 4.545c.218.338.731 1.082 1.428.798c.613-.244.476-1.014.653-1.69c.041-.162.014-.27.095-.379v.03l.558 1.123c.422.662 1.157 1.352 1.769 1.812c.326.243.584.662.992.81v-.04h-.026c-.082-.121-.205-.176-.314-.27a6.6 6.6 0 0 1-.707-.812a17.4 17.4 0 0 1-1.523-2.46c-.218-.42-.409-.879-.585-1.298c-.083-.162-.083-.406-.218-.487c-.205.297-.503.555-.654.92c-.258.58-.285 1.297-.38 2.041c-.055.014-.03 0-.055.03c-.435-.107-.585-.554-.748-.932c-.408-.96-.476-2.501-.123-3.61c.096-.284.504-1.177.341-1.447c-.082-.257-.354-.405-.504-.608a5.5 5.5 0 0 1-.49-.865c-.325-.758-.489-1.596-.843-2.353c-.163-.352-.449-.717-.68-1.041c-.259-.365-.544-.622-.748-1.055c-.068-.151-.163-.392-.054-.554c.026-.108.081-.152.19-.176c.176-.151.68.04.857.121c.503.203.925.392 1.347.676c.19.135.394.392.64.46h.285c.436.095.925.03 1.333.152c.72.23 1.374.567 1.96.933a12 12 0 0 1 4.244 4.624c.163.311.23.595.38.92c.287.662.64 1.338.926 1.987c.286.636.558 1.285.966 1.812c.204.284 1.02.433 1.387.582c.272.12.694.23.94.378c.461.284.924.609 1.359.92c.217.162.898.5.939.77zM6.548 5.588a2.2 2.2 0 0 0-.557.068v.03h.027c.109.216.3.365.435.555l.313.649l.027-.03c.19-.136.286-.352.286-.676c-.082-.095-.095-.19-.163-.284c-.082-.135-.259-.203-.368-.311" clip-rule="evenodd"/></svg>
+                                </a>
+                                <a href="https://getbootstrap.com" target="_blank"
+                                    class="w-9 h-9 border border-slate-400 rounded-full flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white">
+                                    <svg role="img" class="w-5 fill-current" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <title>Bootstrap</title>
+                                        <path
+                                            d="M11.77 11.24H9.956V8.202h2.152c1.17 0 1.834.522 1.834 1.466 0 1.008-.773 1.572-2.174 1.572zm.324 1.206H9.957v3.348h2.231c1.459 0 2.232-.585 2.232-1.685s-.795-1.663-2.326-1.663zM24 11.39v1.218c-1.128.108-1.817.944-2.226 2.268-.407 1.319-.463 2.937-.42 4.186.045 1.3-.968 2.5-2.337 2.5H4.985c-1.37 0-2.383-1.2-2.337-2.5.043-1.249-.013-2.867-.42-4.186-.41-1.324-1.1-2.16-2.228-2.268V11.39c1.128-.108 1.819-.944 2.227-2.268.408-1.319.464-2.937.42-4.186-.045-1.3.968-2.5 2.338-2.5h14.032c1.37 0 2.382 1.2 2.337 2.5-.043 1.249.013 2.867.42 4.186.409 1.324 1.098 2.16 2.226 2.268zm-7.927 2.817c0-1.354-.953-2.333-2.368-2.488v-.057c1.04-.169 1.856-1.135 1.856-2.213 0-1.537-1.213-2.538-3.062-2.538h-4.16v10.172h4.181c2.218 0 3.553-1.086 3.553-2.876z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="swiper-slide-button swiper-button-prev hidden sm:block"></div>
+                    <div class="swiper-slide-button swiper-button-next hidden sm:block"></div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
+
         </div>
         </div>
     </section>
@@ -372,7 +413,8 @@
             <div class="text-center max-w-xl mx-auto mb-12">
                 <h4 class="text-primary font-semibold mb-2 xl:text-lg">Contact</h3>
                     <h2 class="text-3xl font-extrabold mb-3 text-dark lg:text-5xl dark:text-white">Hubungi Kami</h2>
-                    <p class="inline-block max-w-xl font-base text-secondary dark:text-slate-400 lg:text-md">Apabila Anda memiliki
+                    <p class="inline-block max-w-xl font-base text-secondary dark:text-slate-400 lg:text-md">Apabila
+                        Anda memiliki
                         pertanyaan, saran, atau ingin bekerja sama, jangan ragu untuk menghubungi kami melalui formulir
                         di bawah ini!</p>
             </div>
@@ -535,7 +577,8 @@
                     </button>
 
                 </div>
-                <p class="inline-block py-4 sm:py-8 px-6 text-secondary">Apakah Anda yakin ingin mengirimkan pesan ini?</p>
+                <p class="inline-block py-4 sm:py-8 px-6 text-secondary">Apakah Anda yakin ingin mengirimkan pesan ini?
+                </p>
                 <div
                     class="flex justify-end py-4 gap-4 px-6 border-t border-t-slate-200 dark:border-t-slate-600 text-white">
                     <button
@@ -580,5 +623,7 @@
         </div>
     </div>
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 </html>
