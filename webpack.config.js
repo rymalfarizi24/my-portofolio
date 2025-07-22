@@ -15,6 +15,7 @@ export default {
     script: './src/js/script.js',
     indexScript: './src/js/indexScript.js',
     swiper: './src/js/swiper.js',
+    typed: './src/js/typed.js'
   },
   output: {
     path: path.resolve(__dirname, 'docs'),
@@ -25,7 +26,7 @@ export default {
   plugins: [new HtmlWebpackPlugin({
     filename: 'index.html',
     template: './src/index.html',
-    chunks: ['script', 'indexScript', 'swiper']
+    chunks: ['script', 'indexScript', 'swiper', 'typed']
   }),
   new HtmlWebpackPlugin({
     filename: 'about.html',
