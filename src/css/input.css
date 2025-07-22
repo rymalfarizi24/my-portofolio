@@ -24,7 +24,7 @@ section, footer {
 }
 
 section#portfolio {
-    @apply px-2
+    @apply px-0
 }
 
 .navbar-fixed {
