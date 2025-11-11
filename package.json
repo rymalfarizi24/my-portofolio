@@ -1,10 +1,12 @@
 {
   "scripts": {
-    "dev1": "npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/style.css --watch",
-    "dev2": "webpack --watch",
-    "build": "npx tailwindcss -i ./src/css/input.css -o ./src/css/style.css --minify && webpack"
+    "dev": "webpack serve --mode development",
+    "dev2": "npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/style.css --watch",
+    "build": "npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/style.css --minify && webpack --mode production"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.17",
+    "autoprefixer": "^10.4.22",
     "copy-webpack-plugin": "^13.0.0",
     "css-loader": "^7.1.2",
     "html-loader": "^5.1.0",
@@ -20,11 +22,14 @@
     "sharp": "^0.34.2",
     "tailwindcss": "^4.1.7",
     "webpack": "^5.99.9",
-    "webpack-cli": "^6.0.1"
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.7",
-    "firebase": "^11.9.1"
+    "firebase": "^11.9.1",
+    "postcss": "^8.5.6",
+    "postcss-loader": "^8.2.0"
   },
   "name": "my-portofolio",
   "version": "1.0.0",
