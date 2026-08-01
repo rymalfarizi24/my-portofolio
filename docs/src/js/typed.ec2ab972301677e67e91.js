@@ -1,1 +1,0 @@
-(()=>{"use strict";new Typed("#typed",{strings:["Tech Enthusiast","Fullstack Developer","Software Engineer"],typeSpeed:50,backSpeed:25})})();
