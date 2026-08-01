@@ -1,5 +1,6 @@
 new Typed('#typed', {
-  strings: ['Tech Enthusiast', 'Fullstack Developer', 'Software Engineer'],
+  strings: ['Full Stack Developer', 'Backend Developer', 'ML Enthusiast', 'IoT Enthusiast'],
   typeSpeed: 50,
   backSpeed: 25,
+  loop: true
 });

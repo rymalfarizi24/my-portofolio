@@ -23,7 +23,7 @@ const informationSuccession = successionModal.querySelector('p');
 contactForm.querySelector('button').addEventListener('click', function (e) {
     e.preventDefault();
 
-    // Cek jika input kosong
+    // Check if input is empty
     for (let index = 0; index < inputForm.length; index++) {
         if (inputForm[index].value.trim() == '') {
             validationMessage[index].classList.remove('hidden');
@@ -31,15 +31,15 @@ contactForm.querySelector('button').addEventListener('click', function (e) {
             return
         } else validationMessage[index].classList.add('hidden');
 
-        // Cek kevalidan email
+        // Check email validity
         if (index == 1) {
             if (!isValidEmail(inputForm[1].value)) {
                 validationMessage[1].classList.remove('hidden');
-                validationMessage[1].textContent = 'Email tidak valid';
+                validationMessage[1].textContent = 'Email is invalid';
                 scrollIntoView(validationMessage[1]);
                 return
             } else if ((inputForm[1].value.trim() == '')) {
-                validationMessage[1].textContent = 'Tolong, isikan email Anda!';
+                validationMessage[1].textContent = 'Please enter your email!';
                 scrollIntoView(validationMessage[1]);
             }
         }
@@ -108,7 +108,7 @@ const showModal = () => {
 }
 
 const errorMessage = (error) => {
-    messageSuccession.textContent = 'Pesan Anda gagal terkirim';
+    messageSuccession.textContent = 'Your message failed to send';
     informationSuccession.textContent = error;
     successionIcon[0].classList.add('hidden');
     successionIcon[1].classList.remove('hidden');
@@ -116,8 +116,8 @@ const errorMessage = (error) => {
 
 const successMessage = () => {
     inputForm[2].value = '';
-    messageSuccession.textContent = 'Pesan Anda telah terkirim';
-    informationSuccession.textContent = "Terimakasih telah menghubungi kami!";
+    messageSuccession.textContent = 'Your message has been sent';
+    informationSuccession.textContent = 'Thank you for contacting us!';
     successionIcon[0].classList.remove('hidden');
     successionIcon[1].classList.add('hidden');
 }
