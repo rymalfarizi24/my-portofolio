@@ -1,3 +1,4 @@
+// Contact Form
 const contactForm = document.getElementById("contact-form");
 const inputForm = contactForm.querySelectorAll("input, textarea");
 const validationMessage = contactForm.getElementsByTagName("span");
@@ -27,7 +28,10 @@ contactForm.querySelector("button").addEventListener("click", function (e) {
   for (let index = 0; index < inputForm.length; index++) {
     if (inputForm[index].value.trim() == "") {
       validationMessage[index].classList.remove("hidden");
-      scrollIntoView(validationMessage[index]);
+      validationMessage[index].scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
       return;
     } else validationMessage[index].classList.add("hidden");
 
@@ -36,11 +40,17 @@ contactForm.querySelector("button").addEventListener("click", function (e) {
       if (!isValidEmail(inputForm[1].value)) {
         validationMessage[1].classList.remove("hidden");
         validationMessage[1].textContent = "Email is invalid";
-        scrollIntoView(validationMessage[1]);
+        validationMessage[1].scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
         return;
       } else if (inputForm[1].value.trim() == "") {
         validationMessage[1].textContent = "Please enter your email!";
-        scrollIntoView(validationMessage[1]);
+        validationMessage[1].scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
       }
     }
   }
@@ -50,13 +60,6 @@ contactForm.querySelector("button").addEventListener("click", function (e) {
   validationModal.classList.remove("hidden");
   successionModal.classList.add("hidden");
 });
-
-function scrollIntoView(tag) {
-  const yOffset = -250;
-  const y = tag.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-  window.scrollTo({ top: y, behavior: "smooth" });
-}
 
 function isValidEmail(email) {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -132,6 +135,15 @@ const finallyMessage = () => {
 
 submitButton.addEventListener("click", setNewData);
 
+// Scroll to Top
+function scrollIntoView(tag) {
+  const yOffset = -250;
+  const y = tag.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+  window.scrollTo({ top: y, behavior: "smooth" });
+}
+
+// Skills Section
 const skills = [
   { name: "Laravel", slug: "laravel" },
   { name: "Livewire", slug: "livewire" },
@@ -167,4 +179,82 @@ grid.innerHTML = skills
   </div>
 `,
   )
+  .join("");
+
+// Experiences Section
+const experiences = [
+  {
+    date: "Aug - Dec 2025",
+    title: "Teaching Assistant for Electrical Circuit",
+    org: "Diponegoro University",
+    points: [
+      "Assisted laboratory sessions for 20 undergraduate students in the Electrical Circuits Laboratory course.",
+      "Guided students in circuit analysis, laboratory experiments, and the use of electrical measurement instruments.",
+      "Evaluated and provided feedback on laboratory reports for 10 assigned students, ensuring accuracy and adherence to academic standards.",
+    ],
+    tags: [{ name: "Electrical Circuits" }],
+  },
+  {
+    date: "Feb - Jun 2025",
+    title: "Teaching Assistant for Algorithms and Programming",
+    org: "Diponegoro University",
+    points: [
+      "Taught and assisted one class of 30 students in the Algorithms and Programming laboratory sessions.",
+      "Covered fundamental programming concepts using Python and C++, including basic data structures, programming logic, and problem-solving techniques.",
+    ],
+    tags: [{ name: "Python" }, { name: "C++" }],
+  },
+  {
+    date: "Jan - Feb 2025",
+    title: "Web Development Intern",
+    org: "PT DES Teknologi Informasi",
+    description:
+      "During my two-month internship, I worked in a team of two to develop a web-based guestbook application using CodeIgniter 4. I was primarily responsible for the backend development, but I also occasionally contributed to the frontend. The application covers the entire guest management process—from form submission to visit scheduling.",
+    tags: [
+      { name: "CodeIgniter 4", href: "https://codeigniter.com" },
+      { name: "MySQL", href: "https://mysql.com" },
+      { name: "REST API" },
+    ],
+  },
+];
+
+const timeline = document.getElementById("timeline");
+
+timeline.innerHTML = experiences
+  .map((exp, i) => {
+    const isLast = i === experiences.length - 1;
+
+    const body = exp.points
+      ? `<ul class="space-y-2 mb-5 text-secondary dark:text-slate-400 text-sm sm:text-base list-disc list-inside">
+        ${exp.points.map((p) => `<li>${p}</li>`).join("")}
+      </ul>`
+      : `<p class="mb-5 text-secondary dark:text-slate-400 text-sm sm:text-base leading-relaxed">${exp.description}</p>`;
+
+    const tags = exp.tags
+      .map((t) => {
+        const cls =
+          "px-3 py-1 border border-slate-300 dark:border-slate-600 rounded-full inline-flex justify-center items-center text-slate-700 dark:text-slate-200 hover:border-primary hover:bg-primary hover:text-white text-xs sm:text-sm transition-colors";
+        return t.href
+          ? `<a href="${t.href}" target="_blank" class="${cls}">${t.name}</a>`
+          : `<span class="${cls}">${t.name}</span>`;
+      })
+      .join("");
+
+    return `
+    <div class="exp-item flex gap-5 ${isLast ? "" : "pb-12"}">
+      <div class="flex flex-col items-center w-8 shrink-0">
+        <div class="exp-dot w-4 h-4 rounded-full bg-primary ring-4 ring-primary/20 mt-1.5"></div>
+        ${isLast ? "" : '<div class="w-px flex-1 bg-slate-300 dark:bg-slate-700 mt-2"></div>'}
+      </div>
+
+      <div class="exp-card w-full bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 sm:p-7">
+        <span class="inline-block text-xs sm:text-sm font-semibold text-primary mb-3">${exp.date}</span>
+        <h3 class="font-semibold text-dark text-lg sm:text-xl mb-1 dark:text-white">${exp.title}</h3>
+        <h4 class="font-medium text-slate-500 dark:text-slate-400 mb-4 text-sm sm:text-base">${exp.org}</h4>
+        ${body}
+        <div class="flex flex-wrap gap-2">${tags}</div>
+      </div>
+    </div>
+  `;
+  })
   .join("");
