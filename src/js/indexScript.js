@@ -145,19 +145,19 @@ function scrollIntoView(tag) {
 
 // Skills Section
 const skills = [
-  { name: "Laravel", slug: "laravel" },
-  { name: "Livewire", slug: "livewire" },
-  { name: "React", slug: "react" },
-  { name: "Next.js", slug: "nextdotjs" },
-  { name: "FastAPI", slug: "fastapi" },
-  { name: "Python", slug: "python" },
-  { name: "PHP", slug: "php" },
-  { name: "Docker", slug: "docker" },
-  { name: "Git", slug: "git" },
-  { name: "GitHub", slug: "github" },
-  { name: "PostgreSQL", slug: "postgresql" },
-  { name: "MySQL", slug: "mysql" },
-  { name: "TensorFlow", slug: "tensorflow" },
+  { name: "Laravel", slug: "laravel", href: "laravel.com" },
+  { name: "Livewire", slug: "livewire", href: "laravel-livewire.com" },
+  { name: "React", slug: "react", href: "reactjs.org" },
+  { name: "Next.js", slug: "nextdotjs", href: "nextjs.org" },
+  { name: "FastAPI", slug: "fastapi", href: "fastapi.tiangolo.com" },
+  { name: "Python", slug: "python", href: "www.python.org" },
+  { name: "PHP", slug: "php", href: "www.php.net" },
+  { name: "Docker", slug: "docker", href: "www.docker.com" },
+  { name: "Git", slug: "git", href: "git-scm.com" },
+  { name: "GitHub", slug: "github", href: "github.com" },
+  { name: "PostgreSQL", slug: "postgresql", href: "www.postgresql.org" },
+  { name: "MySQL", slug: "mysql", href: "www.mysql.com" },
+  { name: "TensorFlow", slug: "tensorflow", href: "www.tensorflow.org" },
 ];
 
 const grid = document.getElementById("grid");
@@ -165,7 +165,7 @@ const grid = document.getElementById("grid");
 grid.innerHTML = skills
   .map(
     (s) => `
-  <div class="skill-card flex flex-col items-center gap-3">
+  <a href="https://${s.href}" target="_blank" class="skill-card flex flex-col items-center gap-3">
     <div class="w-16 h-16 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-center">
       <img
         src="https://cdn.simpleicons.org/${s.slug}"
@@ -176,7 +176,7 @@ grid.innerHTML = skills
       >
     </div>
     <span class="text-sm font-medium text-slate-700 dark:text-slate-200 text-center">${s.name}</span>
-  </div>
+  </a>
 `,
   )
   .join("");
@@ -202,7 +202,10 @@ const experiences = [
       "Taught and assisted one class of 30 students in the Algorithms and Programming laboratory sessions.",
       "Covered fundamental programming concepts using Python and C++, including basic data structures, programming logic, and problem-solving techniques.",
     ],
-    tags: [{ name: "Python" }, { name: "C++" }],
+    tags: [
+      { name: "Python", href: "https://www.python.org/" },
+      { name: "C++", href: "https://isocpp.org/" },
+    ],
   },
   {
     date: "Jan - Feb 2025",
