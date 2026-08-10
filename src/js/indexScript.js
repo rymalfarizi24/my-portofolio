@@ -1,10 +1,18 @@
 // Portfolio Section Start
+import irrivocaImg from "../assets/irrivoca-web.png";
+import artikulaImg from "../assets/artikula-app.png";
+import shopImg from "../assets/Letsgobois-Shop.png";
+import movieAppImg from "../assets/movie-app.png";
+import siJempangImg from "../assets/si-jempang.png";
+import siPandaImg from "../assets/si-panda.png";
+import guestBookImg from "../assets/Buku-Tamu-Desnet.png";
+
 const projects = [
   {
     title: "Irrivoca - Smart Precision Irrigation",
     badge: "NEW",
     href: "https://github.com/rymalfarizi24/smart-precision-irrigation",
-    image: "./assets/irrivoca-web.png",
+    image: irrivocaImg,
     alt: "Irrivoca App",
     desc: "IoT-based precision irrigation platform integrating Autoencoder-based fault detection and diagnosis for avocado cultivation with real-time monitoring and web dashboard.",
     techs: [
@@ -20,7 +28,7 @@ const projects = [
   {
     title: "Artikula: Reading Space",
     href: "https://github.com/rymalfarizi24/artikula-article-app",
-    image: "./assets/artikula-app.png",
+    image: artikulaImg,
     alt: "Artikula App",
     desc: "Modern blogging platform for publishing, managing, and discovering articles with search, analytics, role-based access, and user feedback features.",
     techs: [
@@ -34,7 +42,7 @@ const projects = [
     title: "Letsgobois Shop",
     badge: "NEW",
     href: "https://letsgobois-shop.vercel.app/",
-    image: "./assets/Letsgobois-Shop.png",
+    image: shopImg,
     alt: "Letsgobois Shop",
     desc: "Next.js e-commerce application with Google authentication, Midtrans payment integration, and separate user and admin panels for efficient store management.",
     techs: [
@@ -46,7 +54,7 @@ const projects = [
   {
     title: "Movie App",
     href: "https://movie-app-five-gold.vercel.app/",
-    image: "./assets/movie-app.png",
+    image: movieAppImg,
     alt: "Movie App",
     desc: "Modern movie discovery application providing overviews, cast information, ratings, and reviews through a fast and responsive interface.",
     techs: [
@@ -57,7 +65,7 @@ const projects = [
   {
     title: "Sistem Jentik Pantau Kampung",
     href: "https://github.com/kkn64kel2UNDIP2025/pembasmi-nyamuk",
-    image: "./assets/si-jempang.png",
+    image: siJempangImg,
     alt: "Si Jempang",
     desc: "Community reporting system that maps potential mosquito larvae locations based on submitted reports to support disease prevention efforts.",
     techs: [
@@ -70,7 +78,7 @@ const projects = [
   {
     title: "Sistem Pantau Data Anak",
     href: "https://github.com/kkn64kel2UNDIP2025/posyandu-management",
-    image: "./assets/si-panda.png",
+    image: siPandaImg,
     alt: "Si Panda",
     desc: "Web application for recording and monitoring child growth data, helping healthcare volunteers manage toddler health information efficiently.",
     techs: [
@@ -82,7 +90,7 @@ const projects = [
   {
     title: "Manajemen Buku Tamu Desnet",
     href: null,
-    image: "./assets/Buku-Tamu-Desnet.png",
+    image: guestBookImg,
     alt: "Manajemen Buku Tamu Desnet",
     desc: "Guest management application for scheduling meetings, managing visitors, documentation, and automated notifications with role-based access control.",
     techs: [
