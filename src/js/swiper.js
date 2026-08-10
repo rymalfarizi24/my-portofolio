@@ -1,32 +1,19 @@
-new Swiper('.card-wrapper', {
-    // Optional parameters
-    //   direction: 'vertical',
-    loop: true,
-    spaceBetween: 60,
-
-    // Pagination bullets
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        dynamicBullets: true,
-    },
-
-    // Navigation arrows
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-
-    //   Responsive breakpoints
-    breakpoints: {
-        0: {
-            slidesPerView: 1,
-        },
-        768: {
-            slidesPerView: 2,
-        },
-        1024: {
-            slidesPerView: 3,
-        },
-    }
+new Swiper(".card-wrapper", {
+  loop: true,
+  spaceBetween: 20,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    dynamicBullets: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    0: { slidesPerView: 1.08, spaceBetween: 16 },
+    640: { slidesPerView: 1.3, spaceBetween: 20 },
+    768: { slidesPerView: 2, spaceBetween: 40 },
+    1024: { slidesPerView: 3, spaceBetween: 60 },
+  },
 });

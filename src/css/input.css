@@ -52,32 +52,61 @@ section#portfolio {
 .swiper .item-lists:active {
   cursor: grabbing;
 }
-
 .swiper-slide-button {
   @apply text-primary;
 }
-
 .swiper-slide-button:hover {
-  @apply scale-110;
+  transform: scale(1.1);
+}
+
+.swiper-pagination {
+  margin-bottom: 20px;
 }
 
 .swiper-pagination-bullet {
-  @apply bg-primary opacity-70;
+  @apply bg-primary opacity-60;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1;
 }
 
-.swiper-pagination-bullet.swiper-pagination-bullet-active {
-  @apply opacity-100;
+.tech-icon {
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+.tech-icon:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px -6px rgba(99, 102, 241, 0.5);
+}
+.item-lists img.cover {
+  transition: transform 0.3s ease;
+}
+.item-lists:hover img.cover {
+  transform: scale(1.06);
 }
 
-.typed-cursor {
-  @apply text-primary text-lg lg:text-2xl;
+/* Swipe hint (mobile only) */
+.swipe-hint svg {
+  animation: swipe-move 1.6s ease-in-out infinite;
+}
+@keyframes swipe-move {
+  0%,
+  100% {
+    transform: translateX(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateX(6px);
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .card-wrapper {
     margin: 0 10px 25px;
   }
-
   .card-wrapper .swiper-slide-button {
     display: none;
   }

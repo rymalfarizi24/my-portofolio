@@ -1,4 +1,139 @@
-// Contact Form
+// Portfolio Section Start
+const projects = [
+  {
+    title: "Irrivoca - Smart Precision Irrigation",
+    badge: "NEW",
+    href: "https://irrivoca.systems/",
+    image: "./assets/irrivoca-web.png",
+    alt: "Irrivoca App",
+    desc: "IoT-based precision irrigation platform integrating Autoencoder-based fault detection and diagnosis for avocado cultivation with real-time monitoring and web dashboard.",
+    techs: [
+      { slug: "keras", href: "https://keras.io/" },
+      { slug: "docker", href: "https://www.docker.com/" },
+      { slug: "fastapi", href: "https://fastapi.tiangolo.com/" },
+      { slug: "influxdb", href: "https://www.influxdata.com/" },
+      { slug: "laravel", href: "https://laravel.com/" },
+      { slug: "livewire", href: "https://livewire.laravel.com/" },
+      { slug: "mariadb", href: "https://mariadb.org/" },
+    ],
+  },
+  {
+    title: "Artikula: Reading Space",
+    href: "https://article-app-748726d198a0.herokuapp.com/",
+    image: "./assets/artikula-app.png",
+    alt: "Artikula App",
+    desc: "Modern blogging platform for publishing, managing, and discovering articles with search, analytics, role-based access, and user feedback features.",
+    techs: [
+      { slug: "laravel", href: "https://laravel.com/" },
+      { slug: "livewire", href: "https://livewire.laravel.com/" },
+      { slug: "supabase", href: "https://supabase.com/" },
+      { slug: "tailwindcss", href: "https://tailwindcss.com" },
+    ],
+  },
+  {
+    title: "Letsgobois Shop",
+    badge: "NEW",
+    href: "https://letsgobois-shop.vercel.app/",
+    image: "./assets/Letsgobois-Shop.png",
+    alt: "Letsgobois Shop",
+    desc: "Next.js e-commerce application with Google authentication, Midtrans payment integration, and separate user and admin panels for efficient store management.",
+    techs: [
+      { slug: "nextdotjs", href: "https://nextjs.org/" },
+      { slug: "firebase", href: "https://firebase.google.com/" },
+      { slug: "tailwindcss", href: "https://tailwindcss.com" },
+    ],
+  },
+  {
+    title: "Movie App",
+    href: "https://movie-app-five-gold.vercel.app/",
+    image: "./assets/movie-app.png",
+    alt: "Movie App",
+    desc: "Modern movie discovery application providing overviews, cast information, ratings, and reviews through a fast and responsive interface.",
+    techs: [
+      { slug: "react", href: "https://react.dev" },
+      { slug: "tailwindcss", href: "https://tailwindcss.com" },
+    ],
+  },
+  {
+    title: "Sistem Jentik Pantau Kampung",
+    href: "https://si-jempang-ab12ff95f881.herokuapp.com/",
+    image: "./assets/si-jempang.png",
+    alt: "Si Jempang",
+    desc: "Community reporting system that maps potential mosquito larvae locations based on submitted reports to support disease prevention efforts.",
+    techs: [
+      { slug: "codeigniter", href: "https://codeigniter.com" },
+      { slug: "leaflet", href: "https://leafletjs.com/" },
+      { slug: "supabase", href: "https://supabase.com/" },
+      { slug: "tailwindcss", href: "https://tailwindcss.com" },
+    ],
+  },
+  {
+    title: "Sistem Pantau Data Anak",
+    href: "https://posyandu-management-e9cce5cfd926.herokuapp.com/",
+    image: "./assets/si-panda.png",
+    alt: "Si Panda",
+    desc: "Web application for recording and monitoring child growth data, helping healthcare volunteers manage toddler health information efficiently.",
+    techs: [
+      { slug: "codeigniter", href: "https://codeigniter.com" },
+      { slug: "supabase", href: "https://supabase.com/" },
+      { slug: "tailwindcss", href: "https://tailwindcss.com" },
+    ],
+  },
+  {
+    title: "Manajemen Buku Tamu Desnet",
+    href: null,
+    image: "./assets/Buku-Tamu-Desnet.png",
+    alt: "Manajemen Buku Tamu Desnet",
+    desc: "Guest management application for scheduling meetings, managing visitors, documentation, and automated notifications with role-based access control.",
+    techs: [
+      { slug: "codeigniter", href: "https://codeigniter.com" },
+      { slug: "mysql", href: "https://www.mysql.com/" },
+      { slug: "tailwindcss", href: "https://tailwindcss.com" },
+    ],
+  },
+];
+
+function techIcon(t) {
+  return `
+    <a href="${t.href}" target="_blank" onclick="event.stopPropagation()"
+      class="tech-icon w-9.5 h-9.5 border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 rounded-full flex justify-center items-center">
+      <img src="https://cdn.simpleicons.org/${t.slug}" alt="${t.slug}" class="w-5 h-5 object-contain"
+        onerror="this.style.display='none'">
+    </a>`;
+}
+
+function projectCard(p) {
+  const badge = p.badge
+    ? `<span class="absolute -top-0.5 right-0 translate-x-full text-[8px] text-primary font-semibold">${p.badge}</span>`
+    : "";
+
+  const inner = `
+    <div class="rounded-md shadow-md overflow-hidden">
+      <img src="${p.image}" alt="${p.alt}" class="cover w-full">
+    </div>
+    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white relative w-fit">
+      ${p.title}${badge}
+    </h3>
+    <p class="font-medium text-secondary dark:text-slate-400 mb-5 h-24">
+      ${p.desc}
+    </p>
+    <div class="mt-2 flex flex-wrap gap-3 justify-center">
+      ${p.techs.map(techIcon).join("")}
+    </div>
+  `;
+
+  return `
+    <li class="swiper-slide item-lists group">
+      ${p.href ? `<a href="${p.href}" target="_blank">${inner}</a>` : inner}
+    </li>`;
+}
+
+document.getElementById("swiper-wrapper").innerHTML = projects
+  .map(projectCard)
+  .join("");
+// Portfolio Section End
+
+// Start Contact Form
 const contactForm = document.getElementById("contact-form");
 const inputForm = contactForm.querySelectorAll("input, textarea");
 const validationMessage = contactForm.getElementsByTagName("span");
@@ -134,6 +269,8 @@ const finallyMessage = () => {
 };
 
 submitButton.addEventListener("click", setNewData);
+
+// End Contact Form
 
 // Scroll to Top
 function scrollIntoView(tag) {
