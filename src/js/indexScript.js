@@ -3,7 +3,7 @@ const projects = [
   {
     title: "Irrivoca - Smart Precision Irrigation",
     badge: "NEW",
-    href: "https://irrivoca.systems/",
+    href: "https://github.com/rymalfarizi24/smart-precision-irrigation",
     image: "./assets/irrivoca-web.png",
     alt: "Irrivoca App",
     desc: "IoT-based precision irrigation platform integrating Autoencoder-based fault detection and diagnosis for avocado cultivation with real-time monitoring and web dashboard.",
@@ -19,7 +19,7 @@ const projects = [
   },
   {
     title: "Artikula: Reading Space",
-    href: "https://article-app-748726d198a0.herokuapp.com/",
+    href: "https://github.com/rymalfarizi24/artikula-article-app",
     image: "./assets/artikula-app.png",
     alt: "Artikula App",
     desc: "Modern blogging platform for publishing, managing, and discovering articles with search, analytics, role-based access, and user feedback features.",
@@ -56,7 +56,7 @@ const projects = [
   },
   {
     title: "Sistem Jentik Pantau Kampung",
-    href: "https://si-jempang-ab12ff95f881.herokuapp.com/",
+    href: "https://github.com/kkn64kel2UNDIP2025/pembasmi-nyamuk",
     image: "./assets/si-jempang.png",
     alt: "Si Jempang",
     desc: "Community reporting system that maps potential mosquito larvae locations based on submitted reports to support disease prevention efforts.",
@@ -69,7 +69,7 @@ const projects = [
   },
   {
     title: "Sistem Pantau Data Anak",
-    href: "https://posyandu-management-e9cce5cfd926.herokuapp.com/",
+    href: "https://github.com/kkn64kel2UNDIP2025/posyandu-management",
     image: "./assets/si-panda.png",
     alt: "Si Panda",
     desc: "Web application for recording and monitoring child growth data, helping healthcare volunteers manage toddler health information efficiently.",
