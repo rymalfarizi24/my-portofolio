@@ -6,6 +6,7 @@ import movieAppImg from "../assets/movie-app.png";
 import siJempangImg from "../assets/si-jempang.png";
 import siPandaImg from "../assets/si-panda.png";
 import guestBookImg from "../assets/Buku-Tamu-Desnet.png";
+import bubblePopImg from "../assets/bubble-pop-game.png";
 
 const projects = [
   {
@@ -39,6 +40,18 @@ const projects = [
     ],
   },
   {
+    title: "Bubble Pop Game",
+    href: "https://github.com/rymalfarizi24/bubble-pop",
+    image: bubblePopImg,
+    alt: "Bubble Pop Game",
+    desc: "Bubble Pop is an interactive web-based game where players pop bubbles to earn points, featuring customizable difficulty settings and pause-resume functionality.",
+    techs: [
+      { slug: "react", href: "https://react.dev" },
+      { slug: "typescript", href: "https://www.typescriptlang.org/" },
+      { slug: "tailwindcss", href: "https://tailwindcss.com" },
+    ],
+  },
+  {
     title: "Letsgobois Shop",
     badge: "NEW",
     href: "https://letsgobois-shop.vercel.app/",
@@ -48,6 +61,7 @@ const projects = [
     techs: [
       { slug: "nextdotjs", href: "https://nextjs.org/" },
       { slug: "firebase", href: "https://firebase.google.com/" },
+      { slug: "typescript", href: "https://www.typescriptlang.org/" },
       { slug: "tailwindcss", href: "https://tailwindcss.com" },
     ],
   },
