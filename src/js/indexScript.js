@@ -8,11 +8,15 @@ import siPandaImg from "../assets/si-panda.png";
 import guestBookImg from "../assets/Buku-Tamu-Desnet.png";
 import bubblePopImg from "../assets/bubble-pop-game.png";
 
+const placeholderImg = (label) =>
+  `https://placehold.co/640x360/1e293b/94a3b8?text=${encodeURIComponent(label)}`;
+
 const projects = [
   {
     title: "Irrivoca - Smart Precision Irrigation",
     badge: "NEW",
-    href: "https://github.com/rymalfarizi24/smart-precision-irrigation",
+    github: "https://github.com/rymalfarizi24/smart-precision-irrigation",
+    demo: null,
     image: irrivocaImg,
     alt: "Irrivoca App",
     desc: "IoT-based precision irrigation platform integrating Autoencoder-based fault detection and diagnosis for avocado cultivation with real-time monitoring and web dashboard.",
@@ -28,7 +32,8 @@ const projects = [
   },
   {
     title: "Artikula: Reading Space",
-    href: "https://github.com/rymalfarizi24/artikula-article-app",
+    github: "https://github.com/rymalfarizi24/artikula-article-app",
+    demo: null,
     image: artikulaImg,
     alt: "Artikula App",
     desc: "Modern blogging platform for publishing, managing, and discovering articles with search, analytics, role-based access, and user feedback features.",
@@ -41,7 +46,8 @@ const projects = [
   },
   {
     title: "Bubble Pop Game",
-    href: "https://github.com/rymalfarizi24/bubble-pop",
+    github: "https://github.com/rymalfarizi24/bubble-pop",
+    demo: "https://bubble-pop-seven.vercel.app/",
     image: bubblePopImg,
     alt: "Bubble Pop Game",
     desc: "Bubble Pop is an interactive web-based game where players pop bubbles to earn points, featuring customizable difficulty settings and pause-resume functionality.",
@@ -53,8 +59,8 @@ const projects = [
   },
   {
     title: "Letsgobois Shop",
-    badge: "NEW",
-    href: "https://letsgobois-shop.vercel.app/",
+    github: "https://github.com/rymalfarizi24/letsgobois-shop",
+    demo: "https://letsgobois-shop.vercel.app/",
     image: shopImg,
     alt: "Letsgobois Shop",
     desc: "Next.js e-commerce application with Google authentication, Midtrans payment integration, and separate user and admin panels for efficient store management.",
@@ -67,7 +73,8 @@ const projects = [
   },
   {
     title: "Movie App",
-    href: "https://movie-app-five-gold.vercel.app/",
+    github: "https://github.com/rymalfarizi24/movie-app",
+    demo: "https://movie-app-five-gold.vercel.app/",
     image: movieAppImg,
     alt: "Movie App",
     desc: "Modern movie discovery application providing overviews, cast information, ratings, and reviews through a fast and responsive interface.",
@@ -78,7 +85,8 @@ const projects = [
   },
   {
     title: "Sistem Jentik Pantau Kampung",
-    href: "https://github.com/kkn64kel2UNDIP2025/pembasmi-nyamuk",
+    github: "https://github.com/kkn64kel2UNDIP2025/pembasmi-nyamuk",
+    demo: null,
     image: siJempangImg,
     alt: "Si Jempang",
     desc: "Community reporting system that maps potential mosquito larvae locations based on submitted reports to support disease prevention efforts.",
@@ -91,7 +99,8 @@ const projects = [
   },
   {
     title: "Sistem Pantau Data Anak",
-    href: "https://github.com/kkn64kel2UNDIP2025/posyandu-management",
+    github: "https://github.com/kkn64kel2UNDIP2025/posyandu-management",
+    demo: null,
     image: siPandaImg,
     alt: "Si Panda",
     desc: "Web application for recording and monitoring child growth data, helping healthcare volunteers manage toddler health information efficiently.",
@@ -103,7 +112,8 @@ const projects = [
   },
   {
     title: "Manajemen Buku Tamu Desnet",
-    href: null,
+    github: null,
+    demo: null,
     image: guestBookImg,
     alt: "Manajemen Buku Tamu Desnet",
     desc: "Guest management application for scheduling meetings, managing visitors, documentation, and automated notifications with role-based access control.",
@@ -124,35 +134,58 @@ function techIcon(t) {
     </a>`;
 }
 
+const githubIconSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4 fill-current"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>`;
+const externalIconSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H18v4.5M18 6l-8 8M8 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-2" /></svg>`;
+
+function actionButton({ href, icon, label }) {
+  return `
+    <a href="${href}" target="_blank" onclick="event.stopPropagation()"
+      class="project-btn flex-1 inline-flex items-center justify-center gap-1.5 py-2 rounded-full border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 text-xs sm:text-sm font-semibold hover:border-primary hover:bg-primary hover:text-white transition duration-200">
+      ${icon}
+      <span>${label}</span>
+    </a>`;
+}
+
+function projectButtons(p) {
+  const buttons = [];
+  if (p.github) buttons.push(actionButton({ href: p.github, icon: githubIconSvg, label: "GitHub" }));
+  if (p.demo) buttons.push(actionButton({ href: p.demo, icon: externalIconSvg, label: "Live Demo" }));
+
+  if (buttons.length === 0) {
+    return `<div class="flex gap-2 mb-5">
+      <span class="flex-1 inline-flex items-center justify-center gap-1.5 py-2 rounded-full border border-dashed border-slate-300 dark:border-slate-600 text-slate-400 dark:text-slate-500 text-xs sm:text-sm font-medium cursor-default select-none">
+        Private Project
+      </span>
+    </div>`;
+  }
+
+  return `<div class="flex gap-2 mb-5">${buttons.join("")}</div>`;
+}
+
 function projectCard(p) {
   const badge = p.badge
     ? `<span class="absolute -top-0.5 right-0 translate-x-full text-[8px] text-primary font-semibold">${p.badge}</span>`
     : "";
 
-  const inner = `
-    <div class="rounded-md shadow-md overflow-hidden">
-      <img src="${p.image}" alt="${p.alt}" class="cover w-full">
-    </div>
-    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white relative w-fit">
-      ${p.title}${badge}
-    </h3>
-    <p class="font-medium text-secondary dark:text-slate-400 mb-5 h-24">
-      ${p.desc}
-    </p>
-    <div class="mt-2 flex flex-wrap gap-3 justify-center">
-      ${p.techs.map(techIcon).join("")}
-    </div>
-  `;
-
   return `
     <li class="swiper-slide item-lists group">
-      ${p.href ? `<a href="${p.href}" target="_blank">${inner}</a>` : inner}
+      <div class="rounded-md shadow-md overflow-hidden">
+        <img src="${p.image}" alt="${p.alt}" class="cover w-full">
+      </div>
+      <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white relative w-fit">
+        ${p.title}${badge}
+      </h3>
+      <p class="font-medium text-secondary dark:text-slate-400 mb-5 h-24">
+        ${p.desc}
+      </p>
+      ${projectButtons(p)}
+      <div class="flex flex-wrap gap-3 justify-center">
+        ${p.techs.map(techIcon).join("")}
+      </div>
     </li>`;
 }
 
-document.getElementById("swiper-wrapper").innerHTML = projects
-  .map(projectCard)
-  .join("");
+document.getElementById('swiper-wrapper').innerHTML = projects.map(projectCard).join('');
 // Portfolio Section End
 
 // Start Contact Form
