@@ -1,0 +1,69 @@
+import path from "path";
+import { fileURLToPath } from "url";
+
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import CopyPlugin from "copy-webpack-plugin";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export default {
+  entry: {
+    script: "./src/js/script.js",
+    indexScript: "./src/js/indexScript.js",
+    swiper: "./src/js/swiper.js",
+    typed: "./src/js/typed.js",
+  },
+  output: {
+    path: path.resolve(__dirname, "docs"),
+    filename: "src/js/[name].[contenthash].js",
+    assetModuleFilename: "[path]/[name]-[hash][ext]",
+    clean: true,
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      filename: "index.html",
+      template: "./src/index.html",
+      chunks: ["script", "indexScript", "swiper", "typed"],
+    }),
+    new HtmlWebpackPlugin({
+      filename: "about.html",
+      template: "./src/about.html",
+      chunks: ["script"],
+    }),
+    new MiniCssExtractPlugin({
+      filename: "src/css/style.[contenthash].css",
+    }),
+    new CopyPlugin({
+      patterns: [{ from: "./src/assets/pdf", to: "./src/assets/pdf" }],
+    }),
+  ],
+
+  module: {
+    rules: [
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
+      {
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: "asset/resource",
+      },
+    ],
+  },
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, "src"),
+    },
+    hot: true,
+    liveReload: true,
+    watchFiles: ["src/**/*.html", "src/**/*.css"],
+    open: true,
+    port: 3000,
+  },
+};

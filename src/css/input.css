@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Teal 500 */
+  --color-primary: oklch(0.704 0.14 182.503);
+  /* Slate 900*/
+  --color-dark: oklch(0.208 0.042 265.755);
+  /* Slate 500 */
+  --color-secondary: oklch(0.554 0.046 257.417);
+}
+
+body {
+  font-family: "Inter", "sans-serif";
+}
+
+.profile-img {
+  @apply grayscale hover:grayscale-0 hover:scale-110 hover:z-1 transition ease-in-out;
+}
+
+.typed-cursor {
+  @apply text-primary text-xl lg:text-2xl;
+}
+
+.link-icon {
+  transition:
+    filter 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease,
+    background-color 0.18s ease;
+}
+.link-icon:hover {
+  filter: brightness(1.08);
+  border-color: oklch(0.704 0.14 182.503);
+
+  background-color: oklch(0.704 0.14 182.503 / 0.08);
+
+  box-shadow:
+    0 0 0 4px oklch(0.704 0.14 182.503 / 0.12),
+    0 0 18px 2px oklch(0.704 0.14 182.503 / 0.3);
+}
+
+.dark .link-icon:hover {
+  filter: brightness(1.08);
+  background-color: oklch(0.704 0.14 182.503 / 0.15);
+}
+
+section,
+footer {
+  @apply px-4 md:px-20 xl:px-18;
+}
+
+section#portfolio {
+  @apply px-0;
+}
+
+.navbar-fixed {
+  @apply fixed z-50 backdrop-blur-sm border-b border-slate-200 dark:border-slate-700;
+}
+
+.hamburger-line {
+  @apply w-7.5 h-0.5 my-2 block bg-dark dark:bg-white relative;
+}
+
+#hamburger > span {
+  @apply transition-all duration-300 ease-in-out;
+}
+.hamburger-active > span:nth-child(1) {
+  @apply rotate-45 -translate-y-[1px];
+}
+.hamburger-active > span:nth-child(2) {
+  @apply scale-0;
+}
+.hamburger-active > span:nth-child(3) {
+  @apply -rotate-45;
+}
+
+.swiper .item-lists:active {
+  cursor: grabbing;
+}
+.swiper-slide-button {
+  @apply text-primary;
+}
+.swiper-slide-button:hover {
+  transform: scale(1.1);
+}
+
+.swiper-pagination-bullet {
+  @apply bg-primary opacity-60;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+.swiper-pagination {
+  margin-bottom: 20px;
+}
+
+.item-lists img.cover {
+  transition: transform 0.3s ease;
+}
+.item-lists:hover img.cover {
+  transform: scale(1.06);
+}
+
+/* Swipe hint (mobile only) */
+.swipe-hint svg {
+  animation: swipe-move 1.6s ease-in-out infinite;
+}
+@keyframes swipe-move {
+  0%,
+  100% {
+    transform: translateX(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateX(6px);
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card-wrapper {
+    margin: 0 10px 25px;
+  }
+  .card-wrapper .swiper-slide-button {
+    display: none;
+  }
+}
+
+/* Skill Section */
+.skill-card {
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    border-color 0.15s ease;
+}
+.skill-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Experience Card */
+.exp-card {
+  transition:
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+.exp-card:hover {
+  transform: translateX(2px);
+}
+.exp-dot {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.exp-item:hover .exp-dot {
+  transform: scale(1.15);
+}
+
+/* Contact Form */
+.field-input {
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.spinner {
+  border-top-color: transparent;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.modal-panel {
+  animation: pop 0.18s ease;
+}
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
