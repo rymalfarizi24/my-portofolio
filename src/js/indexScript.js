@@ -216,38 +216,50 @@ const successionIcon = successionModal.getElementsByTagName("svg");
 const messageSuccession = successionModal.querySelector("h4");
 const informationSuccession = successionModal.querySelector("p");
 
-contactForm.querySelector("button").addEventListener("click", function (e) {
+// Validation
+const fields = [...contactForm.querySelectorAll(".field-input")];
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const isValidEmail = (value) => EMAIL_REGEX.test(value);
+
+// Setiap rule mengembalikan pesan error, atau "" kalau valid
+const rules = {
+  name: (v) => (v ? "" : "Please enter your name!"),
+  email: (v) => {
+    if (!v) return "Please enter your email!";
+    return isValidEmail(v) ? "" : "Email is invalid";
+  },
+  message: (v) => (v ? "" : "Please enter your message!"),
+};
+
+function validateField(input) {
+  const errorEl = document.getElementById(`${input.id}-error`);
+  const message = rules[input.name](input.value.trim());
+
+  if (message) errorEl.textContent = message;
+  errorEl.classList.toggle("invisible", !message);
+  input.setAttribute("aria-invalid", String(Boolean(message)));
+
+  return !message;
+}
+
+// Hapus error langsung saat user memperbaiki isian
+fields.forEach((input) => {
+  input.addEventListener("input", () => {
+    if (input.getAttribute("aria-invalid") === "true") validateField(input);
+  });
+});
+
+contactForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  // Check if input is empty
-  for (let index = 0; index < inputForm.length; index++) {
-    if (inputForm[index].value.trim() == "") {
-      validationMessage[index].classList.remove("hidden");
-      validationMessage[index].scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
-      return;
-    } else validationMessage[index].classList.add("hidden");
+  // Validasi semua field sekaligus, bukan berhenti di error pertama
+  const invalidFields = fields.filter((input) => !validateField(input));
 
-    // Check email validity
-    if (index == 1) {
-      if (!isValidEmail(inputForm[1].value)) {
-        validationMessage[1].classList.remove("hidden");
-        validationMessage[1].textContent = "Email is invalid";
-        validationMessage[1].scrollIntoView({
-          behavior: "smooth",
-          block: "center",
-        });
-        return;
-      } else if (inputForm[1].value.trim() == "") {
-        validationMessage[1].textContent = "Please enter your email!";
-        validationMessage[1].scrollIntoView({
-          behavior: "smooth",
-          block: "center",
-        });
-      }
-    }
+  if (invalidFields.length > 0) {
+    const [firstInvalid] = invalidFields;
+    firstInvalid.scrollIntoView({ behavior: "smooth", block: "center" });
+    firstInvalid.focus({ preventScroll: true });
+    return;
   }
 
   // Show Modal
@@ -255,11 +267,6 @@ contactForm.querySelector("button").addEventListener("click", function (e) {
   validationModal.classList.remove("hidden");
   successionModal.classList.add("hidden");
 });
-
-function isValidEmail(email) {
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return regex.test(email);
-}
 
 // Import Firestore Module
 import { initializeApp } from "firebase/app";
@@ -279,7 +286,8 @@ const firebaseConfig = {
   appId: "1:234953842468:web:893cca114458d487141db1",
 };
 
-const app = initializeApp(firebaseConfig);
+// Initialize Firebase Connection
+initializeApp(firebaseConfig);
 const db = getFirestore();
 
 // Post Data to Firestore

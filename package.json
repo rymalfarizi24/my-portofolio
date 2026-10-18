@@ -1,7 +1,6 @@
 {
   "scripts": {
-    "dev": "webpack serve --mode development",
-    "dev2": "npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/style.css --watch",
+    "dev": "concurrently \"webpack serve --mode development\" \"npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/style.css --watch\"",
     "build": "npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/style.css --minify && webpack --mode production"
   },
   "devDependencies": {
