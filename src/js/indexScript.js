@@ -212,7 +212,6 @@ closeButton.forEach((button) => {
 });
 
 const loadingGif = submission.querySelector("#loading");
-const successionIcon = successionModal.getElementsByTagName("svg");
 const messageSuccession = successionModal.querySelector("h4");
 const informationSuccession = successionModal.querySelector("p");
 
@@ -221,14 +220,32 @@ const fields = [...contactForm.querySelectorAll(".field-input")];
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const isValidEmail = (value) => EMAIL_REGEX.test(value);
 
-// Setiap rule mengembalikan pesan error, atau "" kalau valid
+// Samakan dengan Firestore Security Rules
+const LIMITS = {
+  name: { max: 100 },
+  email: { max: 254 },
+  message: { max: 5000 },
+};
+
 const rules = {
-  name: (v) => (v ? "" : "Please enter your name!"),
+  name: (v) => {
+    if (!v) return "Please enter your name!";
+    if (v.length > LIMITS.name.max)
+      return `Name must be at most ${LIMITS.name.max} characters`;
+    return "";
+  },
   email: (v) => {
     if (!v) return "Please enter your email!";
+    if (v.length > LIMITS.email.max)
+      return `Email must be at most ${LIMITS.email.max} characters`;
     return isValidEmail(v) ? "" : "Email is invalid";
   },
-  message: (v) => (v ? "" : "Please enter your message!"),
+  message: (v) => {
+    if (!v) return "Please enter your message!";
+    if (v.length > LIMITS.message.max)
+      return `Message must be at most ${LIMITS.message.max} characters`;
+    return "";
+  },
 };
 
 function validateField(input) {
@@ -248,6 +265,7 @@ fields.forEach((input) => {
     if (input.getAttribute("aria-invalid") === "true") validateField(input);
   });
 });
+
 
 contactForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -269,6 +287,9 @@ contactForm.addEventListener("submit", (e) => {
 });
 
 // Import Firestore Module
+const iconSuccess = successionModal.querySelector("#icon-success");
+const iconError = successionModal.querySelector("#icon-error");
+
 import { initializeApp } from "firebase/app";
 import {
   getFirestore,
@@ -290,63 +311,63 @@ const firebaseConfig = {
 initializeApp(firebaseConfig);
 const db = getFirestore();
 
-// Post Data to Firestore
-async function setNewData(event) {
-  event.preventDefault();
+// --- UI state helpers ---------------------------------------------------
 
-  showModal();
-
-  const ref = collection(db, "MessagesList");
-  const now = new Date();
-  const timestamp = Timestamp.fromDate(now);
-
-  await addDoc(ref, {
-    Name: inputForm[0].value,
-    Email: inputForm[1].value,
-    Message: inputForm[2].value,
-    CreatedAt: timestamp,
-  })
-    .then(() => successMessage())
-    .catch((error) => errorMessage(error))
-    .finally(() => finallyMessage());
-}
-
-const showModal = () => {
+const showLoading = () => {
   validationModal.classList.add("hidden");
   loadingGif.classList.remove("hidden");
 };
 
-const errorMessage = (error) => {
-  messageSuccession.textContent = "Your message failed to send";
-  informationSuccession.textContent = error;
-  successionIcon[0].classList.add("hidden");
-  successionIcon[1].classList.remove("hidden");
-};
+// Satu fungsi untuk menampilkan hasil, baik sukses maupun gagal
+const showResult = ({ ok, title, text }) => {
+  messageSuccession.textContent = title;
+  informationSuccession.textContent = text;
 
-const successMessage = () => {
-  inputForm[2].value = "";
-  messageSuccession.textContent = "Your message has been sent";
-  informationSuccession.textContent = "Thank you for contacting us!";
-  successionIcon[0].classList.remove("hidden");
-  successionIcon[1].classList.add("hidden");
-};
+  iconSuccess.classList.toggle("hidden", !ok);
+  iconError.classList.toggle("hidden", ok);
 
-const finallyMessage = () => {
-  successionModal.classList.remove("hidden");
   loadingGif.classList.add("hidden");
+  successionModal.classList.remove("hidden");
 };
+
+// --- Submit ---------------------------------------------------------------
+
+async function setNewData(event) {
+  event.preventDefault();
+
+  const [name, email, message] = [...inputForm].map((input) =>
+    input.value.trim()
+  );
+
+  showLoading();
+
+  try {
+    await addDoc(collection(db, "MessagesList"), {
+      Name: name,
+      Email: email,
+      Message: message,
+      CreatedAt: Timestamp.now(),
+    });
+
+    inputForm[2].value = "";
+    showResult({
+      ok: true,
+      title: "Your message has been sent",
+      text: "Thank you for contacting us!",
+    });
+  } catch (error) {
+    console.error("Failed to send message:", error);
+    showResult({
+      ok: false,
+      title: "Your message failed to send",
+      text: "Something went wrong. Please try again in a moment.",
+    });
+  }
+}
 
 submitButton.addEventListener("click", setNewData);
 
 // End Contact Form
-
-// Scroll to Top
-function scrollIntoView(tag) {
-  const yOffset = -250;
-  const y = tag.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-  window.scrollTo({ top: y, behavior: "smooth" });
-}
 
 // Skills Section
 const skills = [
